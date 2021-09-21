@@ -17,7 +17,7 @@ const router = new Router({
         component: People
     },
     {
-        path: "/data",
+        path: "/data/:id",
         component: PersonalData
     }]
 })
