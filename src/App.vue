@@ -28,7 +28,7 @@ export default {
   background-size: cover;
 }
 
-h1 {
+h1, h3 {
   color: yellow;
   font-family: "Star Jedi", arial;
   text-align: center;
