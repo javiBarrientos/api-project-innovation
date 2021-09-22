@@ -1,14 +1,33 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div
-        class="col-sm-12 column"
-        v-for="(person, key) in people.results"
-        :key="key"
-      >
-        <p>{{ person }}</p>
-      </div>
-    </div>
+    <h3>Personajes</h3>
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th>Nombre del personaje</th>
+
+          <th>Altura</th>
+
+          <th>Enlace</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr v-for="(person, key) in people.results" :key="key">
+          <th scope="row">
+            {{ person.name }}
+          </th>
+
+          <td>
+            {{ person.height }}
+          </td>
+
+          <td>
+            <a href="#" role="button" class="btn btn-warning starships">info</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -30,7 +49,7 @@ export default {
       PeopleDataService.getAll()
         .then((response) => {
           this.people = response.data;
-          console.log(response.data);
+          console.log(response.data.results);
         })
         .catch((e) => {
           console.log(e);
@@ -41,7 +60,13 @@ export default {
 </script>
 
 <style scoped>
+table {
+  border-radius: 25px;
+  background-color: #212529;
+  border: 2px yellow solid;
+}
+
 p {
-    color: wheat;
+  color: yellow;
 }
 </style>
