@@ -1,12 +1,14 @@
 <template>
   <div class="container">
     <h3>Personajes</h3>
-    <div class="buttonContainer">
-      <a role="button" class="btn btn-warning starships">Reset</a>
-      <a role="button" class="btn btn-warning" v-on:click="ordenarAltura"
-        >Mayor</a
-      >
-      <a role="button" class="btn btn-warning starships">Menor</a>
+    <div class="inputContainer">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Search"
+        aria-label="Search"
+        v-model="search"
+      />
     </div>
     <table class="table table-dark">
       <thead>
@@ -20,7 +22,7 @@
       </thead>
 
       <tbody>
-        <tr v-for="(person, key) in people.results" :key="key">
+        <tr v-for="person in filteredList" v-bind:key="person">
           <th scope="row">
             {{ person.name }}
           </th>
@@ -45,6 +47,7 @@ export default {
   name: "AllPeople",
   data() {
     return {
+      search: "",
       people: [],
     };
   },
@@ -55,34 +58,31 @@ export default {
     show() {
       PeopleDataService.getAll()
         .then((response) => {
-          this.people = response.data;
+          this.people = response.data.results;
         })
         .catch((e) => {
           console.log(e);
         });
     },
-    ordenarAltura() {
-      function compare(a, b) {
-        if (a.height < b.height) return -1;
-        if (a.height > b.height) return 1;
-        return 0;
-      }
-
-      return this.people.sort(compare);
+  },
+  computed: {
+    filteredList() {
+      return this.people.filter((person) => {
+        return person.name.toLowerCase().includes(this.search.toLowerCase());
+      });
     },
   },
 };
 </script>
 
 <style scoped>
-.buttonContainer {
+.inputContainer {
   margin-bottom: 10px;
   float: right;
 }
 
-.buttonContainer > a:nth-child(2) {
-  margin-left: 10px;
-  margin-right: 10px;
+.form-control {
+  border-radius: 30px;
 }
 
 table {
