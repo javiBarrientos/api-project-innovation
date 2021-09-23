@@ -2,6 +2,9 @@
   <div class="container">
     <h3>Personajes</h3>
     <div class="inputContainer">
+      <a role="button" class="btn btn-warning" v-on:click="ordernarNombre"
+        >Nombre</a
+      >
       <input
         class="form-control"
         type="text"
@@ -15,8 +18,6 @@
         <tr>
           <th id="name">Nombre del personaje</th>
 
-          <th id="height">Altura</th>
-
           <th id="link">Enlace</th>
         </tr>
       </thead>
@@ -28,11 +29,7 @@
           </th>
 
           <td>
-            {{ person.height }}
-          </td>
-
-          <td>
-            <a href="#" role="button" class="btn btn-warning starships">info</a>
+            <a href="#" role="button" class="btn btn-warning">info</a>
           </td>
         </tr>
       </tbody>
@@ -59,10 +56,23 @@ export default {
       PeopleDataService.getAll()
         .then((response) => {
           this.people = response.data.results;
+          console.log(response.data.results);
         })
         .catch((e) => {
           console.log(e);
         });
+    },
+    ordernarNombre() {
+      function compare(a, b) {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      }
+      return this.people.sort(compare);
     },
   },
   computed: {
@@ -79,6 +89,11 @@ export default {
 .inputContainer {
   margin-bottom: 10px;
   float: right;
+  display: flex;
+}
+
+.inputContainer > a {
+  margin-right: 10px;
 }
 
 .form-control {
