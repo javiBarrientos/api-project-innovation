@@ -29,7 +29,11 @@
           </th>
 
           <td>
-            <a href="#" role="button" class="btn btn-warning">info</a>
+            <router-link
+              :to="{ name: 'personal', params: { id: person.url } }"
+              class="buttonLink"
+              >info</router-link
+            >
           </td>
         </tr>
       </tbody>
@@ -56,7 +60,6 @@ export default {
       PeopleDataService.getAll()
         .then((response) => {
           this.people = response.data.results;
-          console.log(response.data.results);
         })
         .catch((e) => {
           console.log(e);
@@ -104,6 +107,18 @@ table {
   border-radius: 25px;
   background-color: #212529;
   border: 2px yellow solid;
+}
+
+.buttonLink {
+  background-color: #ffc107;
+  color: white;
+  padding: 5px 15px;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+.buttonLink:hover {
+  background-color: #ebd50e;
 }
 
 p {
