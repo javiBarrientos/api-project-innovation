@@ -3,7 +3,7 @@
     <div class="mainContacts">
       <div class="contacts">
         <p>mail@gmail.com</p>
-        <p>+34 616 70 23 45</p>
+        <p>+34 687 56 23 45</p>
       </div>
       <div class="social">
         <div></div>
@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
 .mainContainer {
-  padding-top: 20px;
+  padding-top: 10px;
   margin-top: 20px;
   color: white;
   background-color: #212529;
@@ -44,6 +44,7 @@ export default {
 }
 .contacts {
   text-align: right;
+  margin-bottom: 0;
 }
 .social {
   width: 20%;
