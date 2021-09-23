@@ -38,6 +38,7 @@
         </tr>
       </tbody>
     </table>
+    <a role="button" class="btn btn-warning" href="/">Back</a>
   </div>
 </template>
 
