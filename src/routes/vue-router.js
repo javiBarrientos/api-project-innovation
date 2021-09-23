@@ -27,7 +27,8 @@ const router = new Router({
         component: Planets
     },
     {
-        path: "/data/:id",
+        path: "/data",
+        name: "personal",
         component: PersonalData
     }],
 });
