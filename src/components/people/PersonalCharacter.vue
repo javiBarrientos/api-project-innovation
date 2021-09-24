@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Personal info</h3>
+    <h3>character info</h3>
     <div class="container">
       <table class="table table-dark">
         <thead>
