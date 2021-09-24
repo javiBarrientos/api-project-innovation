@@ -18,6 +18,7 @@
         <tr>
           <th id="name">Planet name</th>
 
+          <th id="link">Link</th>
         </tr>
       </thead>
 
@@ -26,6 +27,14 @@
           <th scope="row">
             {{ planet.name }}
           </th>
+
+          <td>
+            <router-link
+              :to="{ name: 'planet', params: { id: planet.url } }"
+              class="buttonLink"
+              >info</router-link
+            >
+          </td>
         </tr>
       </tbody>
     </table>
@@ -99,6 +108,18 @@ table {
   border-radius: 25px;
   background-color: #212529;
   border: 2px yellow solid;
+}
+
+.buttonLink {
+  background-color: #ffc107;
+  color: black;
+  padding: 5px 15px;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+.buttonLink:hover {
+  background-color: #ebd50e;
 }
 
 p {
