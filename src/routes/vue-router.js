@@ -5,6 +5,7 @@ import People from "../views/People.vue";
 import Starships from "../views/Starships.vue";
 import Planets from "../views/Planets.vue";
 import PersonalData from "../views/PersonalData.vue";
+import PlanetData from "../views/PlanetData.vue";
 
 Vue.use(Router);
 
@@ -27,10 +28,20 @@ const router = new Router({
         component: Planets
     },
     {
-        path: "/data",
+        path: "/data/character",
         name: "personal",
         component: PersonalData
-    }],
+    },
+    {
+        path: "/data/starship",
+        name: "starship",
+        component: PersonalData
+    },
+    {
+        path: "/data/planet",
+        name: "planet",
+        component: PlanetData
+    },],
 });
 
 export default router;
