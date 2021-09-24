@@ -1,16 +1,16 @@
 <template>
   <div>
-    <PersonalPerson />
+    <PersonalCharacter />
   </div>
 </template>
 
 <script>
-import PersonalPerson from "../components/people/PersonalPerson.vue";
+import PersonalCharacter from "../components/people/PersonalCharacter.vue";
 
 export default {
   name: "PersonalData",
   components: {
-    PersonalPerson,
+    PersonalCharacter,
   },
 };
 </script>

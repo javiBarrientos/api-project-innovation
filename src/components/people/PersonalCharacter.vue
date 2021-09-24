@@ -55,7 +55,7 @@
 import PeopleDataService from "../../services/people.service";
 
 export default {
-  name: "PersonalPerson",
+  name: "PersonalCharacter",
   data() {
     return {
       personDetails: {},
