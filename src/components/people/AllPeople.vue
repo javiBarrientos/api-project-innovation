@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <h3>Personajes</h3>
+    <h3>Characters</h3>
     <div class="inputContainer">
       <a role="button" class="btn btn-warning" v-on:click="ordernarNombre"
-        >Nombre</a
+        >name</a
       >
       <input
         class="form-control"
@@ -16,9 +16,9 @@
     <table class="table table-dark">
       <thead>
         <tr>
-          <th id="name">Nombre del personaje</th>
+          <th id="name">Character name</th>
 
-          <th id="link">Enlace</th>
+          <th id="link">Link</th>
         </tr>
       </thead>
 
@@ -38,7 +38,7 @@
         </tr>
       </tbody>
     </table>
-    <a role="button" class="btn btn-warning" href="/">Back</a>
+    <a role="button" class="btn btn-warning" href="/">back</a>
   </div>
 </template>
 
@@ -112,7 +112,7 @@ table {
 
 .buttonLink {
   background-color: #ffc107;
-  color: white;
+  color: black;
   padding: 5px 15px;
   text-decoration: none;
   border-radius: 25px;

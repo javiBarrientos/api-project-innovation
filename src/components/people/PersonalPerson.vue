@@ -11,37 +11,37 @@
         <tbody>
           <tr>
             <td>
-              <p>Nombre: {{ personDetails.name }}</p>
+              <p>Name: {{ personDetails.name }}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>Altura: {{ personDetails.height }}</p>
+              <p>Height: {{ personDetails.height }}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>Color de pelo: {{ personDetails.hair_color }}</p>
+              <p>Hair color: {{ personDetails.hair_color }}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>Color de piel: {{ personDetails.skin_color }}</p>
+              <p>Skin color: {{ personDetails.skin_color }}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>Color de ojos: {{ personDetails.eye_color }}</p>
+              <p>Eyes color: {{ personDetails.eye_color }}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>Año de nacimiento: {{ personDetails.birth_year }}</p>
+              <p>Year of birth: {{ personDetails.birth_year }}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>Genero: {{ personDetails.gender }}</p>
+              <p>Gender: {{ personDetails.gender }}</p>
             </td>
           </tr>
         </tbody>
