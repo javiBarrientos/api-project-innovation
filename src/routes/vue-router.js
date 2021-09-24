@@ -5,6 +5,7 @@ import People from "../views/People.vue";
 import Starships from "../views/Starships.vue";
 import Planets from "../views/Planets.vue";
 import PersonalData from "../views/PersonalData.vue";
+import StarShipData from "../views/StarshipData.vue"
 import PlanetData from "../views/PlanetData.vue";
 
 Vue.use(Router);
@@ -35,7 +36,7 @@ const router = new Router({
     {
         path: "/data/starship",
         name: "starship",
-        component: PersonalData
+        component: StarShipData
     },
     {
         path: "/data/planet",

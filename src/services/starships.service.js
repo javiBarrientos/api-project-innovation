@@ -6,6 +6,9 @@ class StarshipsDataService {
     getAll() {
         return axios.get(API_URL);
     }
+    getPersonal(id) {
+        return axios.get(`${id}`);
+    }
 }
 
 export default new StarshipsDataService;
