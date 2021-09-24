@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header />
+    <router-view />
+    <Footer />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: { Header, Footer },
+};
 </script>
 
 <style>
+@import url(https://allfont.es/allfont.css?fonts=star-jedi);
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-image: url("./assets/background_3.jpg");
+  background-color: #cccccc;
+  height: 855px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1, h3 {
+  color: yellow;
+  font-family: "Star Jedi", arial;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+a {
+  font-family: "Star Jedi", arial;
 }
 </style>
